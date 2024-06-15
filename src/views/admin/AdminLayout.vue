@@ -1,6 +1,14 @@
 <script setup>
+    import { onMounted } from 'vue';
+    import { useRouter } from 'vue-router';
     import { useUserStore } from '../../stores/user'
+    import { RouterView } from 'vue-router';
     const user = useUserStore()
+    const router = useRouter();
+    onMounted(() => {
+    // Redirige a la ruta de citas del administrador al montarse el componente
+    router.push({ name: 'admin-appointments' });
+    });
 </script>
 
 
